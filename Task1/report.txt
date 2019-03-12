@@ -1,0 +1,13 @@
+
+
+The train dataset consists of 1212 instances, 887 features [x0:x886] and corresponding labels [y] with 55 classes. Hence, this is a multi-class classification problem.
+
+The missing values is imputed using the most frequent occurence of the feature column and normalized to [0, 1] with MinMaxScaler.
+For cross validation and model selection the train data is split into 2/3 for fitting and 1/3 for testing.
+
+I used difference classifiers to train a final model including Gaussian Naive Bayes, Support Vector Machine, K-nearest neighbors which all resulted in very or even negative R-squared score. 
+Using GridSearchCV for parameter optimization in conjunction with SVM I found the best parameters gamma=0.01 and C= 0.1 for a polynomial kernel and best R-squared score=0.0455.
+
+Without knowing more about the data and features it's impossible to find a better model. But, apparently others were able to find a better model. I'm really curious how they did. 
+  
+
