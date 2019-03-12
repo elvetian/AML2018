@@ -1,0 +1,14 @@
+Sleep staging from EEG/EMG
+
+For this task we've built a convolutional neural network as proposed by Lawhern et al. [1]. 
+The network starts with a temporal and depthwise convolution to learn frequency specific spatial filters. 
+Then, a separable convolution learns how to optimally mix the feature maps together before passing the features to a softmax dense classifcation layer.
+
+We used the software implementation provided by the authors at [2], configured it to our needs and conducted various experiments.
+We concatenated eeg1 and eeg2 of the given data into a 2-channel sample and adjusted the number of temporal filters F1 to 8 and F2 to 16 to match our 4-second EEG signal sampled at 128 Hz (as opposed to the 2-second signal in the original implementation).
+Also, we computed individual sample weights to balance sample data and performed 4-fold cross validation to prevent overfitting.
+Best BMAC score we could achieve in our experiments was 0.94.
+  
+
+[1] https://arxiv.org/pdf/1611.08024.pdf
+[2] https://github.com/vlawhern/arl-eegmodels
