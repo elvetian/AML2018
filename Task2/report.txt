@@ -1,0 +1,13 @@
+
+
+The train dataset consists of 4800 instances, 1000 features [x0:x999] and corresponding labels [y] with 3 class labels {0, 1, 2}.
+
+The learning task is a multi-class classification problem.
+
+We use Support Vector Machines SVC classifier with RBF and Linear kernel and Min-Max scaling of each feature to the range [0, 1] without feature selection in a first approach and
+achieved best BMAC score of 0.61 for RBF kernel, penalty parameter C=12 and gamma=0.015.
+
+Next we wanted to further enhance this result with Recursive Feature Elimination technique which shall remove the weakest features. To find the optimal number of features to keep 
+cross validation is used with RFE to score different feature subsets and select the best scoring collection subset.
+
+Unfortunately we couldn't finish this the feature selection procedure until deadline and remain with a best public score of 0.66 that passed the medium benchmark.
